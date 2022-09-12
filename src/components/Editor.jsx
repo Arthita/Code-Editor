@@ -4,7 +4,7 @@ import 'codemirror/theme/dracula.css';
 import 'codemirror/mode/xml/xml';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/css/css';
-import {Controlled as ControlledEditor} from 'react-codemirror2';
+import {Controlled} from 'react-codemirror2';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCompressArrowsAlt,faExpandArrowsAlt} from '@fortawesome/free-solid-svg-icons';
 function Editor(props){
@@ -19,7 +19,7 @@ function Editor(props){
     {displayName}
     <button type="button" onClick={()=>{setOpen(!open)}}><FontAwesomeIcon icon={open?faCompressArrowsAlt:faExpandArrowsAlt}/></button>
     </div>
-    <ControlledEditor
+    <Controlled
     onBeforeChange={handleChange}
     value={value}
     className="code-mirror-wrapper"
